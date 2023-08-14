@@ -12,4 +12,16 @@ class FlatsTest < ApplicationSystemTestCase
 
     assert_selector 'ul li'
   end
+
+  test 'visiting individual flat page print the name of the flat' do
+    visit '/flats/145'
+
+    assert_selector 'h1', text: 'Charm at the Steps of the Sacre Coeur/Montmartre'
+  end
+
+  test 'visiting individual flat page display the image of the flat' do
+    visit '/flats/145'
+
+    assert_selector 'img'
+  end
 end
